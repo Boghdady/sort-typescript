@@ -1,21 +1,9 @@
-class Sorter {
-  constructor(public collection: number[]){}
+import { NumbersCollection } from "./NumbersCollection";
+import { Sorter } from "./Sorter";
 
-  sort() : void{
-    const {length} = this.collection;
-    for(let i=0; i<length; i++){
-      for(let j=0; j< length- 1-1; j++){
-        if(this.collection[j] > this.collection[j+1]){
-          const leftHand = this.collection[j];
-          this.collection[j] = this.collection[j+1];
-          this.collection[j+1] = leftHand;
-        }
-      }
-    }
-  }
-}
+const numbersCollections = new NumbersCollection([4,-2,1,6]);
 
-const sorter = new Sorter([4,-2,1,6]);
+const sorter = new Sorter(numbersCollections);
 
 sorter.sort();
-console.log(sorter.collection);
+console.log(numbersCollections.data);
