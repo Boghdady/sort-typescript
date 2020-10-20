@@ -1,9 +1,10 @@
+import { CharactersCollection } from "./CharactersCollection";
 import { NumbersCollection } from "./NumbersCollection";
 import { Sorter } from "./Sorter";
 
-const numbersCollections = new NumbersCollection([4,-2,1,6]);
-
-const sorter = new Sorter(numbersCollections);
-
+const numbersCollection = new NumbersCollection([4,-2,1,6]);
+const charactersCollection = new CharactersCollection('yda');
+// const sorter = new Sorter(numbersCollection);
+const sorter = new Sorter(charactersCollection);
 sorter.sort();
-console.log(numbersCollections.data);
+console.log(charactersCollection.data);
