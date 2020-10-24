@@ -1,6 +1,6 @@
 import { Sortable } from "./Sorter";
 
-export class NumbersCollection implements Sortable{
+export class NumbersCollection implements Sortable {
   // data is the numbers that we want to sort it
   constructor(public data: number[])  { }
 
@@ -8,7 +8,7 @@ export class NumbersCollection implements Sortable{
   get length(): number {
     return this.data.length;
   }
-
+  
   // Compare between two numbers
   compare(leftIndex: number, rightIndex:number) : boolean {
     return this.data[leftIndex] > this.data[rightIndex];
@@ -20,6 +20,5 @@ export class NumbersCollection implements Sortable{
     this.data[leftIndex] = this.data[rightIndex];
     this.data[rightIndex] = leftHand;
   } 
-
-    
+  
 }

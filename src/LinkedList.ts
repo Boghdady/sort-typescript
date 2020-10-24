@@ -1,10 +1,11 @@
+import { Sortable } from "./Sorter";
+
 class Node {
   next: Node | null = null;
-
   constructor(public data: number) {}
 }
 
-export class LinkedList {
+export class LinkedList implements Sortable {
   head: Node | null = null;
 
   add(data: number): void {
@@ -22,7 +23,6 @@ export class LinkedList {
 
     tail.next = node;
   }
-
   get length(): number {
     if (!this.head) {
       return 0;
@@ -37,7 +37,6 @@ export class LinkedList {
 
     return length;
   }
-
   at(index: number): Node {
     if (!this.head) {
       throw new Error('Index out of bounds');
@@ -56,7 +55,6 @@ export class LinkedList {
 
     throw new Error('Index out of bounds');
   }
-
   compare(leftIndex: number, rightIndex: number): boolean {
     if (!this.head) {
       throw new Error('List is empty');
@@ -64,7 +62,6 @@ export class LinkedList {
 
     return this.at(leftIndex).data > this.at(rightIndex).data;
   }
-
   swap(leftIndex: number, rightIndex: number): void {
     const leftNode = this.at(leftIndex);
     const rightNode = this.at(rightIndex);
@@ -73,7 +70,6 @@ export class LinkedList {
     leftNode.data = rightNode.data;
     rightNode.data = leftHand;
   }
-
   print(): void {
     if (!this.head) {
       return;
